@@ -23,7 +23,7 @@ COMPILE_DIR=$BUILD_DIR"/.heroku"
 COMPILE_BIN_DIR=$COMPILE_DIR"/bin" # Link for Node is stored here.
 COMPILE_APP_DIR=$COMPILE_DIR"/app" # Built Meteor application is stored here.
 TEMP_DIR=$(mktemp -d $BUILDPACK_DIR"/temp-XXXX")
-
+BUNDLE_DEST=`mktemp -d "$BUILDPACK_DIR/build-XXXX"`
 # Create directories.
 mkdir -p $COMPILE_BIN_DIR $COMPILE_APP_DIR
 
@@ -45,7 +45,7 @@ export PATH=$PATH:$COMPILE_BIN_DIR
 # Install Meteor
 #
 status "Installing Meteor"
-curl -sS https://install.meteor.com/ | HOME="$METEOR_DIR" /bin/sh
+curl -sS https://install.meteor.com/ | HOME="$" /bin/sh
 export PATH=$PATH:$HOME"/.meteor"
 status $HOME
 
@@ -55,7 +55,8 @@ status $HOME
 status "Building Meteor application"
 status $TEMP_DIR
 ls
-cd $APP_DIR && meteor build --directory $TEMP_DIR
+cd $APP_DIR && meteor build --directory $BUNDLE_DEST
+ls
 mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
 
 #
