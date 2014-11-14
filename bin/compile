@@ -55,7 +55,8 @@ PATH=:$HOME:$PATH
 # Build Meteor application
 #
 status "Building Meteor application"
-cd $APP_DIR && meteor build --directory $TEMP_DIR
+#meteor create myapp
+cd $COMPILE_BIN_DIR && meteor build --directory $TEMP_DIR
 mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
 
 #
