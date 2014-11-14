@@ -41,20 +41,21 @@ export npm_config_prefix=$COMPILE_DIR
 export CPATH=$COMPILE_DIR"/include"
 export CPPPATH=$CPATH
 export PATH=$PATH:$COMPILE_BIN_DIR
-ls
 #
 # Install Meteor
 #
 status "Installing Meteor"
-curl -sS https://install.meteor.com/ | sh && export PATH=$PATH:$HOME"/.meteor"
+curl -sS https://install.meteor.com/ | sh
+export PATH=$PATH:$HOME"/.meteor"
 status $HOME
+
 #
 # Build Meteor application
 #
 status "Building Meteor application"
-status $APP_DIR
+status $APP_DIR   
 cd $APP_DIR && meteor build --directory $TEMP_DIR
-mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
+mv $TEMP_ DIR"/bundle/"* $COMPILE_APP_DIR
 
 #
 # Install dependencies.
