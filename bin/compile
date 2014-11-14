@@ -41,7 +41,7 @@ export npm_config_prefix=$COMPILE_DIR
 export CPATH=$COMPILE_DIR"/include"
 export CPPPATH=$CPATH
 export PATH=$PATH:$COMPILE_BIN_DIR
-
+ls
 #
 # Install Meteor
 #
@@ -53,13 +53,8 @@ curl -sS https://install.meteor.com/ | sh && export PATH=$PATH:$HOME"/.meteor"
 #
 status "Building Meteor application"
 status $APP_DIR
-status $COMPILE_DIR
-cd $COMPILE_DIR
-ls
-npm install fibers
-cd $APP_DIR && meteor create "/bundle/" && meteor build --directory $TEMP_DIR
-ls
-mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
+cd $APP_DIR && meteor build --directory $TEMP_DIR
+mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
 
 #
 # Install dependencies.
