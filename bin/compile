@@ -52,9 +52,7 @@ export PATH=$PATH:$HOME"/.meteor"
 # Build Meteor application
 #
 status "Building Meteor application"
-cd $APP_DIR
-ls && cd ../ && ls
-cd $APP_DIR && meteor build --directory $BUNDLE_DEST
+cd $COMPILE_APP_DIR && meteor build --directory $BUNDLE_DEST
 cd $BUNDLE_DEST && ls
 mv $BUNDLE_DEST"/bundle/" $COMPILE_APP_DIR
 
