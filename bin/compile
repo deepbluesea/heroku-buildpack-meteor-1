@@ -47,7 +47,7 @@ ls
 #
 status "Installing Meteor"
 curl -sS https://install.meteor.com/ | sh && export PATH=$PATH:$HOME"/.meteor"
-
+status $HOME
 #
 # Build Meteor application
 #
