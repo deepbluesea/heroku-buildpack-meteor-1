@@ -57,7 +57,7 @@ cd ../
 ls
 cd $APP_DIR && ls && meteor build --directory $TEMP_DIR
 ls
-mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
+mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
 
 #
 # Install dependencies.
