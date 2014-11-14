@@ -46,7 +46,7 @@ export PATH=$PATH:$COMPILE_BIN_DIR
 #
 status "Installing Meteor"
 curl -sS https://install.meteor.com/ | /bin/sh
-cd ../ && cd ../ && ls
+export PATH=$PATH:$HOME"/.meteor"
 
 #
 # Build Meteor application
