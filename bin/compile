@@ -53,9 +53,10 @@ status $HOME
 # Build Meteor application
 #
 status "Building Meteor application"
-status $APP_DIR   
+status $TEMP_DIR
+ls
 cd $APP_DIR && meteor build --directory $TEMP_DIR
-mv $TEMP_ DIR"/bundle/"* $COMPILE_APP_DIR
+mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
 
 #
 # Install dependencies.
