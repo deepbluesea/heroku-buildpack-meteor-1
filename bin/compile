@@ -23,7 +23,7 @@ COMPILE_DIR=$BUILD_DIR"/.heroku"
 COMPILE_BIN_DIR=$COMPILE_DIR"/bin" # Link for Node is stored here.
 COMPILE_APP_DIR=$COMPILE_DIR"/app" # Built Meteor application is stored here.
 TEMP_DIR=$(mktemp -d $BUILDPACK_DIR"/temp-XXXX")
-BUNDLE_DEST=`mktemp -d "$BUILDPACK_DIR/build-XXXX"`
+BUNDLE_DEST==$(mktemp -d $BUILDPACK_DIR"/build-XXXX")
 # Create directories.
 mkdir -p $COMPILE_BIN_DIR $COMPILE_APP_DIR
 
