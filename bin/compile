@@ -56,6 +56,7 @@ PATH=:$HOME:$PATH
 #
 status "Building Meteor application"
 #meteor create myapp
+meteor create lakesauce
 cd $COMPILE_BIN_DIR && meteor build --directory $TEMP_DIR
 mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
 
