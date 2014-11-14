@@ -53,10 +53,11 @@ status $HOME
 # Build Meteor application
 #
 status "Building Meteor application"
-status $TEMP_DIR
+status $BUNDLE_DEST
+cd $APP_DIR
 ls
-cd $APP_DIR && meteor build --directory $BUNDLE_DEST
-ls
+meteor build --directory $BUNDLE_DEST
+
 mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
 
 #
