@@ -55,7 +55,7 @@ status "Building Meteor application"
 status $APP_DIR
 cd ../
 ls
-cd $APP_DIR && ls && meteor build --directory $TEMP_DIR
+cd $APP_DIR && meteor create "/bundle/" && meteor build --directory $TEMP_DIR
 ls
 mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
 
