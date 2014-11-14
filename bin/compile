@@ -46,16 +46,13 @@ export PATH=$PATH:$COMPILE_BIN_DIR
 # Install Meteor
 #
 status "Installing Meteor"
-curl -sS https://install.meteor.com/ | sh
-export PATH=$PATH:$HOME"/.meteor"
+curl -sS https://install.meteor.com/ | sh && export PATH=$PATH:$HOME"/.meteor"
 
 #
 # Build Meteor application
 #
 status "Building Meteor application"
-ls
-ls
-ls
+cd ../
 ls
 cd $APP_DIR && meteor build --directory $TEMP_DIR
 mv $TEMP_DIR"/bundle/"* $COMPILE_APP_DIR
