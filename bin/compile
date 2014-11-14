@@ -53,8 +53,8 @@ curl -sS https://install.meteor.com/ | sh && export PATH=$PATH:$HOME"/.meteor"
 #
 status "Building Meteor application"
 status $APP_DIR
-cd ../
-ls
+npm uninstall fibers
+npm install fibers
 cd $APP_DIR && meteor create "/bundle/" && meteor build --directory $TEMP_DIR
 ls
 mv $TEMP_DIR"/bundle/" $COMPILE_APP_DIR
